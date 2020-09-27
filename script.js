@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const bcrypt = require('bcrypt-nodejs');
 
 const app = express();
 
@@ -33,6 +34,7 @@ app.get('/',(req,res) => {
 });
 //  '/signin' route 
 app.post('/signin',(req,res) =>{
+;
     if(req.body.email === database.users[0].email 
         && req.body.password === database.users[0].password){
             res.json('Success');
@@ -91,6 +93,8 @@ app.put('/image', (req,res) =>{
         res.status(400).send('user not found or invalid user id');
     }
 });
+
+
 // server running on port 3000
 app.listen(3000,(req,res)=>{
     console.log('server running on port:3000')

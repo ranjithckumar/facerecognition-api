@@ -1,10 +1,10 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt-nodejs');
+const cors = require('cors');
 
 const app = express();
 
-app.use(bodyParser.json());
 
 // Database for users
 const database = { 
@@ -28,6 +28,8 @@ const database = {
     ]
 }
 
+app.use(bodyParser.json());
+app.use(cors());
 // starting route
 app.get('/',(req,res) => {
     res.send(database.users);
@@ -96,6 +98,6 @@ app.put('/image', (req,res) =>{
 
 
 // server running on port 3000
-app.listen(3000,(req,res)=>{
-    console.log('server running on port:3000')
+app.listen(5000,(req,res)=>{
+    console.log('server running on port:5000')
 });

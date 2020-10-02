@@ -64,12 +64,17 @@ app.post('/signin',(req,res) =>{
 
 app.post('/register',(req,res) =>{
     const { email, name , password} = req.body;
-   db('users').insert({
+   db('users')
+   .returning('*')
+   .insert({
     email:email,
     name:name,
     joined: new Date()
-   }).then(console.log);
-    res.send(database.users[database.users.length-1]);
+   })
+   .then(response =>{
+       console.log(response);
+   })
+    
 });
 
 // get user infomation based on userid '/profile:id'

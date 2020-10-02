@@ -2,7 +2,20 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt-nodejs');
 const cors = require('cors');
+const knex = require('knex');             //package for postgresql coonection
+//sytax to connect psql db
+const db = knex({
+    client: 'pg',
+    connection: {
+      host : '127.0.0.1',
+      user : 'postgres',
+      password : 'postgres',
+      database : 'smartbrain'
+    }
+  });
+// queries for db
 
+db.select('*').from('users');
 const app = express();
 
 
@@ -51,13 +64,11 @@ app.post('/signin',(req,res) =>{
 
 app.post('/register',(req,res) =>{
     const { email, name , password} = req.body;
-    database.users.push({
-            id:'127',
-            name:name,
-            email:email,
-            entries:0,
-            joined: new Date()
-    })
+   db('users').insert({
+    email:email,
+    name:name,
+    joined: new Date()
+   }).then(console.log);
     res.send(database.users[database.users.length-1]);
 });
 

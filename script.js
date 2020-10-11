@@ -39,6 +39,8 @@ app.get('/profile/:id', (req,res) =>{profile.handleProfile(req,res,db)});
 // To update rank of users '/image'
 
 app.put('/image', (req,res) =>{image.handleImage(req,res,db)});
+// api call
+app.post('/imageurl', (req,res) =>{image.handleApiCall(req,res)});
 
 
 // server running on port 3000

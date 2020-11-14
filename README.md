@@ -48,5 +48,9 @@ Step 4: create table login("mention all fields AND datatypes ");
 Step 5: Refer below images for better understanding how database will look after coonecting to front end and backend api
 
 
-
+#Screen shots
+![pic](https://github.com/ranjithckumar/facerecognition-api/blob/master/Screen%20shots/Screenshot%20(10).png)
+![pic](https://github.com/ranjithckumar/facerecognition-api/blob/master/Screen%20shots/Screenshot%20(12).png)
+![pic](https://github.com/ranjithckumar/facerecognition-api/blob/master/Screen%20shots/Screenshot%20(13).png)
+![pic](https://github.com/ranjithckumar/facerecognition-api/blob/master/Screen%20shots/Screenshot%20(2).png)
 

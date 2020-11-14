@@ -11,7 +11,7 @@ const knex = require('knex');             //package for postgresql coonection
 const db = knex({
     client: 'pg',
     connection: {
-      host : 'postgresql-cubed-35673',
+      host : '127.0.0.1',
       user : 'postgres',
       password : 'postgres',
       database : 'smartbrain'

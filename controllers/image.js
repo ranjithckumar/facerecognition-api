@@ -3,8 +3,10 @@ const Clarifai = require('clarifai');
  
 // Clarifai api key 
 const app = new Clarifai.App({
-    apiKey: 'b49d8766d11d4623b4b03f409594f015'
+    apiKey: ''
    })
+
+   // apiKey : 'b49d8766d11d4623b4b03f409594f115'  look like this.. paste your own api key above
 
    const handleApiCall = (req,res) => {
     app.models
